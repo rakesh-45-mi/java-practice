@@ -1,0 +1,177 @@
+1)Array declaration:
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n =sc.nextInt();
+        int[] arr = new int[n];//declare an array
+        for(int i=0;i<=n-1;i++){
+            arr[i] = sc.nextInt();
+        }
+        for(int i=0;i<=n-1;i++){
+            System.out.print(arr[i]+" ");
+        }
+        //sout(arr)//base address
+    }
+}
+--------------------------------------------------------------------------------------
+2)a)Array insertion(end)
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int size =sc.nextInt();//5
+        int[] arr = new int[size +1];//6
+        for(int i = 0; i<= size -1; i++){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println("enter the value to add at end:");
+        int end =sc.nextInt();
+        arr[size]=end;
+        size++;
+        for(int i = 0; i<= size -1; i++){
+            System.out.print(arr[i]+" ");
+        }
+    }
+}
+-------------------------------------------------------------------------------
+b)Insertion at end:
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int size =sc.nextInt();//5
+        int[] arr = new int[size +1];//6
+        for(int i = 0; i<= size -1; i++){//0 to 4
+            arr[i] = sc.nextInt();
+        }
+        System.out.println("enter the value to be added at begin:");
+        int begin =sc.nextInt();
+        for(int i=size;i>=1;i--){
+            arr[i]=arr[i-1];
+        }
+        arr[0]=begin;
+        size++;
+        for(int i = 0; i<= size -1; i++){
+            System.out.print(arr[i]+" ");
+        }
+
+    }
+}
+-----------------------------------------------------------------------
+c)insertion at specific position:
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int size =sc.nextInt();
+        int[] arr = new int[size+1];
+        for(int i = 0; i<= size -1; i++){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println("Enter the element and the pos");
+        int ele = sc.nextInt();
+        int pos = sc.nextInt();
+        for(int i=size;i>=pos;i--){
+            arr[i]=arr[i-1];
+        }
+        arr[pos-1]=ele;
+        size++;
+        for(int i = 0; i<= size -1; i++){
+            System.out.print(arr[i]+" ");
+        }
+
+
+    }
+}
+-----------------------------------------------------------------------------
+3)Deletion 
+a)end:
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int size =sc.nextInt();//5
+        int[] arr = new int[size];
+        for(int i = 0; i<= size -1; i++){
+            arr[i] = sc.nextInt();
+        }
+        arr[size-1]=0;
+        size--;
+        for(int i = 0; i<= size -1; i++){
+            System.out.print(arr[i]+" ");
+        }
+    }
+}
+----------------------------------------------------------------------------
+b)begin:
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int size =sc.nextInt();
+        int[] arr = new int[size];
+        for(int i = 0; i<= size -1; i++){
+            arr[i] = sc.nextInt();
+        }
+        for(int i=0;i<=size-2;i++){
+            arr[i]= arr[i+1];
+        }
+        arr[size-1]=0;
+        size--;
+
+        for(int i = 0; i<= size -1; i++){
+            System.out.print(arr[i]+" ");
+        }
+
+    }
+}
+------------------------------------------------------------
+c)specific pos:
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int size =sc.nextInt();
+        int[] arr = new int[size];
+        for(int i = 0; i<= size -1; i++){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println("enter the position:");
+        int pos=sc.nextInt();
+        for(int i=pos-1;i<=size-2;i++){
+            arr[i]=arr[i+1];
+        }
+        arr[size-1]=0;
+        size--;
+        for(int i = 0; i<= size -1; i++){
+            System.out.print(arr[i]+" ");
+        }
+    }
+}
+------------------------------------------------------------------------
+4)search
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int size =sc.nextInt();
+        int flag=0;
+        int[] arr = new int[size];
+        for(int i = 0; i<= size -1; i++){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println("enter the search element:");
+        int ele= sc.nextInt();
+        for(int i=0;i<=size-1;i++){
+            if(arr[i]==ele){
+                System.out.println("Found at the pos "+(i+1));
+                flag=1;
+                break;
+            }
+        }
+        if (flag == 0) {
+            System.out.println("element not found");
+        }
+    }
+}

@@ -1,0 +1,256 @@
+OOPS CONCEPTS:
+1)Encapsulation:
+class Encap{
+    String name;
+    int age;
+    void Greetings(){
+        System.out.println("Hello!!");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Encap e = new Encap();
+        e.name="ABC";
+        e.age = 18;
+        e.Greetings();
+        System.out.println(e.name+" "+e.age);
+        
+
+    }
+}
+------------------------------------------------------------------
+INHERTIANCE:
+1)SINGLE
+class Mom{
+    String family_name = "BRYERS";
+    void Greetings(){
+        System.out.println("Hello!!");
+    }
+}
+class Son extends Mom{
+       String Qualification = "BE";
+}
+public class Main {
+    public static void main(String[] args) {
+
+         Mom m = new Mom();
+         m.Greetings();
+         
+         Son s = new Son();
+        System.out.println("Son family name:" + s.family_name);
+        
+
+    }
+}
+----------------------------------------------
+method overriding:
+class Mom{
+    String name ="Joyce";
+    String family_name = "BRYERS";
+    void Greetings(){
+        System.out.println("Hello everyone!!");
+    }
+}
+class Son extends Mom{
+       String name = "Will";//field override
+       String Qualification = "BE";
+       void Greetings(){//method override
+           System.out.println("Get out!!");
+       }
+}
+public class Main {
+    public static void main(String[] args) {
+         Mom m = new Mom();
+         m.Greetings();
+
+         Son s = new Son();
+         s.Greetings();
+
+
+    }
+}
+------------------------------
+Multilevel inheritance:
+class Granddad{
+    String family_name = "Bryers";
+}
+class Mom extends Granddad{
+    String house = "Upside down";
+}
+class Son extends Mom{
+    String Qualification ="BE";
+}
+public class Main {
+    public static void main(String[] args) {
+         Mom m = new Mom();
+        System.out.println(m.family_name);
+
+         Son s = new Son();
+        System.out.println(s.family_name);
+    }
+}
+--------------------------------------------------
+Hierarchial
+class Mom {
+    String name = "Joyce";
+    String house = "Upside down";
+    void Greetings(){
+        System.out.println("Hello!!!");
+    }
+}
+class Son extends Mom{
+    String Qualification ="BE";
+    void Greetings(){
+        System.out.println("Get Out");
+    }
+}
+class Daughter extends Mom{
+
+}
+public class Main {
+    public static void main(String[] args) {
+         Mom m = new Mom();
+         m.Greetings();//hello
+
+         Son s = new Son();
+         s.Greetings();//get out
+
+         Daughter d = new Daughter();
+         d.Greetings();//hello
+
+    }
+}
+-----------------------------------------------------------------
+multiple can't be done in inheritance so used interface:
+interface Dad {
+    void Greetings();//abstract methods(only declaration)
+    void familyname();
+     void Interest();
+}
+interface Mom{
+    void Greetings();
+    void familyname();
+}
+class Son implements Mom,Dad{
+    public void Greetings(){
+        System.out.println("Hello!!");
+    }
+    public void familyname(){
+        System.out.println("Bryers");
+    }
+    public void Interest(){
+        System.out.println("Sports");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+         Son s = new Son();
+         s.Interest();//Sports
+         
+    }
+}
+------------------------------------------------------------------------------
+polymorphism(method overloading)
+//method can have same name but it should have different signature(para)
+class Example{
+  void add(int a,int b,int c){
+      System.out.println("Adding three nums...");
+      System.out.println(a+b+c);
+  }
+  void add(int a,int b){
+      System.out.println("Adding two numbers");
+      System.out.println(a+b);
+  }
+
+}
+public class Main {
+    public static void main(String[] args) {
+         Example e = new Example();
+         e.add(5,10,2);
+
+    }
+}
+---------------------------------------------------------------------
+Abstraction:
+abstract class Insta{
+    void show(){
+        System.out.println("This is an abstract class...");
+    }
+}
+class User extends Insta{
+  void display(){
+      System.out.println("This is user class...");
+  }
+
+}
+public class Main {
+    public static void main(String[] args) {
+        User e = new User();
+        e.display();
+        e.show();
+    }
+}
+--------------------------------------------------------------------------
+getters and setters:
+import java.util.Scanner;
+class Student{
+    String Name;
+    int Age;
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String Name) {
+        this.Name = Name;
+    }
+
+    public void setAge(int Age){
+        this.Age = Age;
+    }
+
+    public int getAge()
+    {
+        return Age;
+    }
+
+}
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+		String Name = sc.next();
+        s1.setName(Name);
+        String example = s1.getName();
+        System.out.println(example);
+
+    }
+}
+--------------------------------------------------------
+Constructor://also a method but it has class name
+class Student{
+    String Name;
+    int Age;
+    public Student(){//no-param constructor
+        System.out.println("Obj created!!!");
+    }
+    public Student(String Name,int Age){//parameterized cons
+        this.Name=Name;
+        this.Age=Age;
+    }
+
+}
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        Student s2 = new Student("ABC",20);
+        System.out.println(s1.Name+" "+s1.Age);
+        System.out.println(s2.Name+" "+s2.Age);
+
+    }
+}
+
+
+
+
+
+
